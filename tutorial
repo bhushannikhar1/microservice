@@ -1,0 +1,41 @@
+Building a basic microservice.
+
+1. Build logic to persist model.
+{
+  "jsonelement1" : "value1",
+  "jsonelement2" : "value2",
+  ...
+}
+
+2. Build logic to persist multiple microservices
+
+{
+  "services": [
+    {
+      "url": "http://server:port/uri1",
+      "body": {
+        "jsonelement1": "value1",
+        "jsonelement2": "value2"
+        ...
+      }
+    },
+    {
+      "url": "http://server:port/uri1",
+      "body": {
+        "jsonelement1": "value1",
+        "jsonelement2": "value2"
+        ...
+      }
+    }
+  ]
+}
+
+
+This structure will act as business model for each of your views. You can club microservices to reflect your business case in above format.
+
+3. Build webservice backend
+-Build logic to persist JSON document to appropriate table (in json serialized form, even for relational). 
+JSON serialization gives greater flexibility to add or delete fields.
+-Build index table persisting logic to get advantage of relational type querying.
+-Build caching logic.
+-Build validation logic as per your business case.
